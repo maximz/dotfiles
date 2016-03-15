@@ -1,0 +1,19 @@
+[user]
+	email = maxim@maximzaslavsky.com
+	name = Maxim Zaslavsky
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	archivebranch = "!f() { git tag archive/$1 $1; git branch -D $1; git push --tags origin :$1; }; f" 
+	ressurectbranch = "!f() { git branch $1 archive/$1; git tag -d archive/$1 }; f"
+	blankbranch = "!f() { git symbolic-ref HEAD refs/heads/$1; rm .git/index; git clean -fdx; }; f"
+	trackremotes = "!f() { for remote in `git branch -r`; do git branch --track $remote; done }; f" ; follow with git fetch --all and git pull --all (see http://stackoverflow.com/a/10312587/130164)
+	wdiff = diff --word-diff=color --unified=1
+[heroku]
+	account = maximz
+[core]
+	autocrlf = true
+[push]
+	default = current
+[diff "pandoc"]n
+  textconv=pandoc --to=markdown
+  prompt = false

@@ -1,0 +1,15 @@
+// install in: C:\Users\maxim\AppData\Roaming\Sublime Text 2\Packages\User
+ {
+    //"cmd": ["pandoc", "-S", "-s", "-f", "markdown", "-t", "latex", "-o", "$file_base_name.pdf", "-V", "mainfont:Garamond", "--latex-engine", "xelatex", "--listings", "-H", "C:\\Users\\Maxim\\listings-setup.tex", "$file_name"],
+    "cmd": ["pandoc -S -s -f markdown -t latex -o $file_base_name.pdf -V mainfont:Garamond --latex-engine xelatex --listings -H C:\\Users\\Maxim\\listings-setup.tex $file_name"],
+    "shell": "bash",
+    "path": "C:\\Program Files (x86)\\Git\\bin;%path%",
+    "selector": "text.html.markdown",
+    "variants": [ {
+    	"name": "Run",
+    	"cmd": ["pandoc", "-S", "-s", "-f", "markdown", "-t", "latex", "-o", "$file_base_name.pdf", "-V", "mainfont:Roboto", "--latex-engine", "xelatex", "--listings", "-H", "C:\\Users\\Maxim\\listings-setup.tex", "$file_name"]
+    }
+    ]
+ }
+ /* hit Ctrl B to run "cmd". Hit Ctrl-Shift-B to run "Run" */
+ /* code highlights: http://tex.stackexchange.com/a/179956/53 ; http://www.ctan.org/tex-archive/macros/latex/contrib/listings/ */
